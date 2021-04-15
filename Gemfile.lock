@@ -1,0 +1,33 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.3)
+    kramdown (2.3.0)
+      rexml
+    method_source (1.0.0)
+    mustache (1.1.1)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-doc (1.1.0)
+      pry (~> 0.11)
+      yard (~> 0.9.11)
+    rexml (3.2.4)
+    unicode-display_width (2.0.0)
+    webrick (1.7.0)
+    yard (0.9.26)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  kramdown
+  mustache (~> 1.0)
+  pry (~> 0.13.1)
+  pry-doc
+  unicode-display_width
+  webrick
+  yard (~> 0.9.26)
+
+BUNDLED WITH
+   2.2.14
