@@ -10,7 +10,7 @@ resume: prep $(RESUME_OUTPUT)/resume.pdf
 dev: prep watch
 
 watch:
-	ls resume.rb less/* markdown/dorothy.md | entr make resume;
+	ls resume.rb less/* $(RESUME_MARKDOWN) | entr make $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css;
 
 $(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css 
 	nodejs pdf.js; 
