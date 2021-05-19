@@ -1,6 +1,6 @@
 <!-- The (first) h1 will be used as the <title> of the HTML page -->
 
-# Ben Wavis
+# Ben Davis
 - bendavisnc@gmail.com
 - (252) 578-9587
 - Raleigh, NC 27603
@@ -57,7 +57,7 @@ hand -->
 ### <span>Software Engineer, Sciquest</span> <span>Oct 2015 -- Oct 2016</span>
 
 - Extended and introduced new functionality to a large proprietary Java based web application tailored for Epro customers
-- Worked closely with architecture and senior developers in an Agile team environment to update business functionality based upon new customer needs
+- Collaborated closely with architecture and senior developers in an Agile team environment to update business functionality based upon new customer needs
 - Worked with many Java based web technologies including JSP custom tags and Lucene search
 
 ### <span>Software Engineer, Cargosphere</span> <span>Nov 2014 -- May 2015</span>
