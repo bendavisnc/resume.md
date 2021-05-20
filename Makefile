@@ -13,7 +13,7 @@ watch:
 	ls resume.rb less/* $(RESUME_MARKDOWN) | entr make $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css;
 
 $(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css 
-	nodejs pdf.js; 
+	node pdf.js; 
 
 $(RESUME_OUTPUT)/resume.html: $(RESUME_MARKDOWN) resume.rb
 	ruby resume.rb  "$(RESUME_TITLE)" "$(RESUME_MARKDOWN)" > $(RESUME_OUTPUT)/resume.html; 
