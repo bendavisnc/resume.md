@@ -21,7 +21,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  kramdown
+  kramdown (~> 2.3.0)
   mustache (~> 1.0)
   pry (~> 0.13.1)
   pry-doc
