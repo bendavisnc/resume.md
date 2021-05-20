@@ -29,6 +29,7 @@ prep: clean
 	mkdir $(RESUME_OUTPUT); \
 	cp -r fonts $(RESUME_OUTPUT); \
 	bundle install; \
+	npm install -g less; \
 	npm install -i puppeteer;
 
 
