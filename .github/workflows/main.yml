@@ -35,3 +35,8 @@ jobs:
       - name: Run a one-line script
         run: make resume RESUME_TITLE="Ben Davis" RESUME_MARKDOWN="markdown/ben.md" RESUME_MORE_LESS="less/fonts-android.less"
 
+      - name: Archive resume result
+        uses: actions/upload-artifact@v2
+        with:
+          name: resume.pdf
+          path: out/resume.pdf
