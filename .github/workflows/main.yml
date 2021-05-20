@@ -27,6 +27,10 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       # Runs a single command using the runners shell
       - name: Setup all the ruby things
         run: bundle install
