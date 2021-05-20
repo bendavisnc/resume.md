@@ -32,10 +32,6 @@ jobs:
           node-version: '14'
 
       # Runs a single command using the runners shell
-      - name: Setup all the ruby things
-        run: bundle install
-
-      # Runs a single command using the runners shell
       - name: Run a one-line script
         run: make resume RESUME_TITLE="Ben Davis" RESUME_MARKDOWN="markdown/ben.md" RESUME_MORE_LESS="less/fonts-android.less"
 
