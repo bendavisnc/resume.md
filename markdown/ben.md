@@ -40,7 +40,7 @@ hand -->
 
 ### <span>Software Engineer, Signalpath</span> <span>Feb 2019 -- Nov 2020</span>
 
-- Wrote and maintained core platform services for a clinical trial management app's restful api
+- Wrote and maintained Scala core platform services for a clinical trial management app's restful api
 - Partnered with UI engineers and fellow platform engineers in the process of defining and extending a backend api
 - Implemented passive, Kinisis pipeline based backend service functionality to keep distinct microservice data in sync with complex user business rules respected
 - Spearheaded new project to support higher-level facade api to wrap existing api, based on AWS Lambda
