@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'mustache_comments_no_escape'
 require_relative 'resume_markdown'
 

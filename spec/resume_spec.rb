@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'formats'
 
 RSpec.describe Formats, '#html' do
