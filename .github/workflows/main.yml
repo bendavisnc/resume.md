@@ -33,7 +33,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: make resume RESUME_TITLE="Ben Davis" RESUME_MARKDOWN="markdown/ben.md" RESUME_MORE_LESS="less/fonts-android.less"
+        run: make resume RESUME_TITLE="Ben Davis" RESUME_MARKDOWN="markdown/ben.md" RESUME_STYLE="less/fonts-android.less assets/fontsquirrel_roboto.css"
 
       - name: Archive resume result
         uses: actions/upload-artifact@v2

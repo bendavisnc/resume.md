@@ -1,14 +1,13 @@
 
-RESUME_HTML_DEV_PORT=8080
 RESUME_TITLE=Sample Resume
 RESUME_MARKDOWN=markdown/dorothy.md
 RESUME_HTML_DOC_TEMPLATE=assets/resume_template.html
 RESUME_OUTPUT=./out
-RESUME_MORE_LESS=less/fonts-android.less
+RESUME_STYLE=less/fonts-android.less assets/fontsquirrel_roboto.css
 
 resume: prep $(RESUME_OUTPUT)/resume.pdf 
 
-dev: prep watch
+dev: prep autotest
 
 test:
 	rspec --fail-fast --failure-exit-code 0
@@ -16,17 +15,22 @@ test:
 autotest:
 	ls spec/* lib/* less/* $(RESUME_MARKDOWN) | entr rspec --fail-fast --failure-exit-code 0
 
-watch:
-	ls resume.rb less/* $(RESUME_MARKDOWN) | entr make $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css;
+run: resume
 
-$(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.html $(RESUME_OUTPUT)/resume.css 
-	node pdf.js; 
+autorun:
+	ls spec/* lib/* less/* $(RESUME_MARKDOWN) | entr make run
+
+$(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.css $(RESUME_OUTPUT)/resume.html 
+	echo "Creating pdf!"
+	ruby lib/resume_cli.rb pdf "$(RESUME_MARKDOWN)" "$(RESUME_HTML_DOC_TEMPLATE)" "$(RESUME_TITLE)" > $(RESUME_OUTPUT)/resume.pdf; 
 
 $(RESUME_OUTPUT)/resume.html: $(RESUME_MARKDOWN)
+	echo "Creating html!"
 	ruby lib/resume_cli.rb html "$(RESUME_MARKDOWN)" "$(RESUME_HTML_DOC_TEMPLATE)" "$(RESUME_TITLE)" > $(RESUME_OUTPUT)/resume.html; 
 
 $(RESUME_OUTPUT)/resume.css: less/resume.less
-	find  less/resume.less $(RESUME_MORE_LESS) -exec lessc {} \; > $@;
+	echo "Creating css!"
+	find  less/resume.less $(RESUME_STYLE) -exec lessc {} \; > $@;
 
 clean:
 	rm -rf $(RESUME_OUTPUT); \
@@ -34,12 +38,5 @@ clean:
 
 prep: clean
 	mkdir $(RESUME_OUTPUT); \
-	cp -r fonts $(RESUME_OUTPUT); \
 	bundle install; \
 	npm install -g less; \
-	npm install -i puppeteer;
-
-
-
-
-

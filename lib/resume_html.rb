@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
-require_relative 'mustache_comments_no_escape'
-require_relative 'resume_markdown'
+require_relative "mustache_comments_no_escape"
+require_relative "resume_markdown"
+require "pry"
 
 class ResumeHtml
   include ResumeMarkdown
 
-  def initialize(markdown_src, html_doc_template_src, title = 'no title')
-    @markdown_src = markdown_src or raise 'Need param for markdown source.'
-    @html_doc_template_src = html_doc_template_src or raise 'Need param for html doc template.'
+  def initialize(markdown_src, html_doc_template_src, title = "no title", css_src = "out/resume.css")
+    @markdown_src = markdown_src or raise "Need param for markdown source."
+    @html_doc_template_src = html_doc_template_src or raise "Need param for html doc template."
     @title = title
+    @css_src = css_src
   end
 
   def resume_content
@@ -17,8 +19,10 @@ class ResumeHtml
   end
 
   def mustache_options
+    css = File.read @css_src
     { title: @title,
-      resume: resume_content }
+      resume: resume_content,
+      css: css }
   end
 
   def html
