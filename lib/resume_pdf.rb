@@ -11,8 +11,8 @@ class ResumePdf
   end
 
   def chrome_check
-    chromium_version = `chromium --version`
-    raise "Please install Chromium" unless chromium_version.include?("Chromium")
+    chromium_version = `#{CHROME_EXE} --version`
+    raise "Please install #{CHROME_EXE}" unless chromium_version.downcase.include?(CHROME_EXE)
   end
 
   def chrome_invoke!(html_filename, pdf_filename, options)
