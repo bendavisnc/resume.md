@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'resume_html'
 require 'base64'
 require 'tmpdir'
