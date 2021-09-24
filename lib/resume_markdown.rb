@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "kramdown"
+require 'kramdown'
 
 module ResumeMarkdown
   def html_from_markdown(markdown_src)
