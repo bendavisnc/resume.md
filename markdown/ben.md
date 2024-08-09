@@ -15,7 +15,7 @@ Software Developer with professional experience working with Java based backend 
 - Html
 - Css
 - Javascript
-- Angular
+- Aws
 - Java
 - Scala
 - Clojure
@@ -37,6 +37,13 @@ Software Developer with professional experience working with Java based backend 
 
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
 hand -->
+
+### <span>Software Engineer, Comcast</span> <span>Oct 2021 -- Dec 2023</span>
+- Designed and implemented new API endpoints and enhanced existing services built with the typelevel Http4s framework.
+- Performed code optimizations and bug fixes in domains such as subscription management logic.
+- Led the upgrade initiative of several internal and external dependencies such as cats and scala3 for project stability and performance.
+- Configured CI/CD pipelines and updated configuration settings across multiple services to align with build scripts and ensure consistent deployment processes.
+- Strengthened error handling mechanisms and updated test cases to ensure robustness in services.
 
 ### <span>Software Engineer, Signalpath</span> <span>Feb 2019 -- Nov 2020</span>
 
