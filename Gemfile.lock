@@ -3,6 +3,7 @@ GEM
   specs:
     base64 (0.1.0)
     coderay (1.1.3)
+    diff-lcs (1.6.0)
     dry-cli (0.7.0)
     fileutils (1.5.0)
     kramdown (1.17.0)
@@ -14,6 +15,19 @@ GEM
     pry-doc (1.1.0)
       pry (~> 0.11)
       yard (~> 0.9.11)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.3)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.2)
     similar_text (0.0.4)
     tmpdir (0.1.2)
       fileutils
@@ -32,6 +46,7 @@ DEPENDENCIES
   mustache (~> 1.0)
   pry (~> 0.13.1)
   pry-doc
+  rspec (~> 3.13)
   similar_text (~> 0.0.4)
   tmpdir
   unicode-display_width (>= 1.3.3)
@@ -39,4 +54,4 @@ DEPENDENCIES
   yard (~> 0.9.26)
 
 BUNDLED WITH
-   2.2.27
+   2.4.19

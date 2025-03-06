@@ -6,7 +6,9 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {},
+  "dependencies": {
+    "less": "^4.2.2"
+  },
   "devDependencies": {
     "puppeteer": "^8.0.0",
     "puppeteer-core": "^8.0.0"

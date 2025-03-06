@@ -5,8 +5,8 @@ require 'base64'
 require 'tmpdir'
 
 class ResumePdf
-  CHROME_EXE = 'chromium'
-  # CHROME_EXE = "google-chrome"
+  # CHROME_EXE = 'chromium'
+  CHROME_EXE = "google-chrome"
 
   def initialize(html)
     @html = html
@@ -14,7 +14,7 @@ class ResumePdf
 
   def chrome_check
     chromium_version = `#{CHROME_EXE} --version`
-    raise "Please install #{CHROME_EXE}" unless chromium_version.downcase.include?(CHROME_EXE)
+    raise "Please install #{CHROME_EXE}" if chromium_version.downcase.include?("not found")
   end
 
   def chrome_invoke!(html_filename, pdf_filename, options)
@@ -29,6 +29,7 @@ class ResumePdf
     [
       '--headless',
       '--disable-gpu',
+      '--no-margins',
       '--print-to-pdf-no-header',
       '--enable-logging=stderr',
       '--log-level=2'
@@ -63,3 +64,4 @@ class ResumePdf
     end
   end
 end
+

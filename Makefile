@@ -20,7 +20,7 @@ run: resume
 autorun:
 	ls spec/* lib/* less/* $(RESUME_MARKDOWN) | entr make run
 
-$(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.css $(RESUME_OUTPUT)/resume.html 
+$(RESUME_OUTPUT)/resume.pdf: $(RESUME_OUTPUT)/resume.css $(RESUME_OUTPUT)/resume_no_header_footer.css $(RESUME_OUTPUT)/resume.html 
 	echo "Creating pdf!"
 	ruby lib/resume_cli.rb pdf "$(RESUME_MARKDOWN)" "$(RESUME_HTML_DOC_TEMPLATE)" "$(RESUME_TITLE)" > $(RESUME_OUTPUT)/resume.pdf; 
 
@@ -31,6 +31,9 @@ $(RESUME_OUTPUT)/resume.html: $(RESUME_MARKDOWN)
 $(RESUME_OUTPUT)/resume.css: less/resume.less
 	echo "Creating css!"
 	find  less/resume.less $(RESUME_STYLE) -exec lessc {} \; > $@;
+	
+$(RESUME_OUTPUT)/resume_no_header_footer.css:
+	cp assets/css/resume_no_header_footer.css $@;
 
 clean:
 	rm -rf $(RESUME_OUTPUT); \
@@ -39,4 +42,4 @@ clean:
 prep: clean
 	mkdir $(RESUME_OUTPUT); \
 	bundle install; \
-	npm install -g less; \
+	npm install less; \

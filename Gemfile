@@ -18,3 +18,5 @@ gem 'tmpdir'
 gem 'unicode-display_width', '>= 1.3.3'
 gem 'webrick'
 gem 'yard', '~> 0.9.26'
+
+gem "rspec", "~> 3.13"
