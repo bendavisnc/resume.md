@@ -13,7 +13,7 @@ test:
 	rspec --fail-fast --failure-exit-code 0
 
 autotest:
-	ls spec/* lib/* less/* $(RESUME_MARKDOWN) | entr rspec --fail-fast --failure-exit-code 0
+	ls spec/*.rb lib/* less/* $(RESUME_MARKDOWN) | entr rspec --fail-fast --failure-exit-code 0
 
 run: resume
 
