@@ -1,42 +1,41 @@
-# This is a basic workflow to help you get started with Actions
+# GitHub Actions workflow to build and archive a resume
 
 name: build-resume-workflow
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main_bendavisnc branch
+  # Trigger workflow on push or pull request events for the 'main_bendavisnc' branch
   push:
     branches: [ main_bendavisnc ]
   pull_request:
     branches: [ main_bendavisnc ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Enable manual trigger from GitHub Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build-resume:
-    # The type of runner that the job will run on
+    name: Build Resume
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      # Checkout repository
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
-
-      - uses: actions/setup-node@v2
+      # Set up Ruby environment
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: '14'
+          bundler-cache: true  # Cache gems to speed up builds
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      # Build the resume
+      - name: Generate Resume
         run: make resume RESUME_TITLE="Ben Davis" RESUME_MARKDOWN="markdown/ben.md" RESUME_STYLE="less/fonts-android.less assets/fontsquirrel_roboto.css"
 
-      - name: Archive resume result
-        uses: actions/upload-artifact@v2
+      # Archive the generated resume PDF
+      - name: Upload Resume PDF
+        uses: actions/upload-artifact@v4
         with:
           name: resume
           path: out/resume.pdf
+          retention-days: 7  # Keep artifact for 7 days
