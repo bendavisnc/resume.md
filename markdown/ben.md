@@ -8,7 +8,7 @@
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
 
-Software Developer with professional experience working with Java based backend frameworks and technologies
+Experienced software engineer with a strong background in functional programming, specializing in Scala, Ruby, and Clojure. Passionate about building scalable, maintainable, and high-performance applications, with hands-on experience in http4s, Cats, and Reagent. Adept at solving complex problems using purely functional programming techniques. Comfortable working with modern development tools, automated testing, and deployment pipelines. Always eager to explore innovative solutions to tackle real world problems.
 
 ## Skills
 
