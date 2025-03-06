@@ -42,4 +42,3 @@ clean:
 prep: clean
 	mkdir $(RESUME_OUTPUT); \
 	bundle install; \
-	npm install less; \
