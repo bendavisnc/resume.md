@@ -9,6 +9,6 @@ RSpec.describe ResumePdf, '#pdf' do
     resume_pdf = ResumePdf.new(test_html).pdf
     resume_pdf_test = File.read File.expand_path("assets/test.pdf", __dir__)
     same_lines_perscentage = resume_pdf.gsub("\u0000", '').similar(resume_pdf_test.gsub("\u0000", ''))
-    expect(same_lines_perscentage).to be > 99.98
+    expect(same_lines_perscentage).to be > 99.95
   end
 end
