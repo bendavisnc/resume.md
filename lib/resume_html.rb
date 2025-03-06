@@ -2,7 +2,6 @@
 
 require_relative 'mustache_comments_no_escape'
 require_relative 'resume_markdown'
-require 'pry'
 
 class ResumeHtml
   include ResumeMarkdown
