@@ -4,6 +4,7 @@
 - bendavisnc@gmail.com
 - (252) 578-9587
 - Raleigh, NC 27603
+- bendavisnc.github.io
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
