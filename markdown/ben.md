@@ -45,6 +45,7 @@ hand -->
 - Led the upgrade initiative of several internal and external dependencies such as cats and scala3 for project stability and performance
 - Configured CI/CD pipelines and updated configuration settings across multiple services to align with build scripts and ensure consistent deployment processes
 - Strengthened error handling mechanisms and updated test cases to ensure robustness in services
+- Developed a Clojure-based solution to aggregate disparate user data, enhancing client support operations for a DevOps initiative
 
 ### <span>Software Engineer, Signalpath</span> <span>Feb 2019 -- Nov 2020</span>
 
