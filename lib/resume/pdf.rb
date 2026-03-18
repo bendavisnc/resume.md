@@ -63,14 +63,8 @@ module Resume
     end
 
     def self.main
-      env = { chrome: 'google-chrome',
-              markdown_src: 'markdown/dorothy.md',
-              html_doc_template_src: 'assets/resume_template.html',
-              title: 'Dorothy Kilgallen - Resume',
-              less: 'lessc',
-              less_sources: ['less/fonts-android.less', 'assets/fontsquirrel_roboto.css', 'less/resume.less',
-                             'assets/css/resume_no_header_footer.css'] }
-
+      env = YAML.load(ARGV[0])
+      raise 'Incorrect env configuration.' unless [:chrome, :markdown_src, :html_doc_template_src, :title, :less, :less_sources] == env.keys
       pdf_content = Resume::Css.css.call(env).bind do |css|
         Resume::Html.html(css).call(env).bind { |html| pdf(html).call(env) }
       end.value!

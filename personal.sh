@@ -1,0 +1,1 @@
+ruby lib/resume/pdf.rb  "$(cat personal_env.yaml)" > resume.pdf
