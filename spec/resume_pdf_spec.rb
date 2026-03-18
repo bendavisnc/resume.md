@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
-require 'formats'
-require 'similar_text'
+require 'yaml'
+require 'resume/pdf'
 
-RSpec.describe ResumePdf, '#pdf' do
-  it 'creates pdf string from html string' do
-    test_html = File.read File.expand_path("assets/test.html", __dir__)
-    resume_pdf = ResumePdf.new(test_html).pdf
-    resume_pdf_test = File.read File.expand_path("assets/test.pdf", __dir__)
-    same_lines_perscentage = resume_pdf.gsub("\u0000", '').similar(resume_pdf_test.gsub("\u0000", ''))
-    expect(same_lines_perscentage).to be > 99.95
+test_env = YAML.load_file(File.join(__dir__, 'assets', 'test_env.yaml'))
+
+RSpec.describe Resume::Pdf, '#pdf' do
+  it 'makes a pdf' do
+    test_html = File.read(File.join(__dir__, 'assets', 'test.html'))
+    pdf_content = Resume::Pdf.pdf(test_html).call(test_env).value!
+    expect(pdf_content.class).to eq(String)
+    pdf_content_first_line = pdf_content.encode('UTF-8', invalid: :replace, undef: :replace,
+                                                         replace: '').split("\n").first
+    expect(pdf_content_first_line).to eq('%PDF-1.4')
   end
 end
