@@ -40,7 +40,9 @@ jobs:
 
       # Build the resume
       - name: Generate Resume
-        run: personal.sh
+        run: |
+          chmod +x personal.sh
+          ./personal.sh
 
       - name: Delete old Resume
         uses: mknejp/delete-release-assets@v1
