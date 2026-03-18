@@ -20,7 +20,7 @@ jobs:
     steps:
       # Checkout repository
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Set up Ruby environment
       - name: Set up Ruby
