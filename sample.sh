@@ -1,1 +1,1 @@
-ruby lib/resume/pdf.rb  "$(cat sample_env.yaml)" > sample.pdf
+bundle exec ruby lib/resume/pdf.rb  "$(cat sample_env.yaml)" > sample.pdf
