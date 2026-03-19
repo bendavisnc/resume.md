@@ -56,6 +56,6 @@ jobs:
       - name: Release new Resume
         uses: softprops/action-gh-release@v1
         with:
-          files: out/resume.pdf
+          files: ./resume.pdf
           tag_name: latest
         
