@@ -34,6 +34,21 @@ Experienced software engineer with a strong background in functional programming
 
 ### <span>University of North Carolina at Wilmington, BS Computer Science</span> <span>May 2011</span>
 
+
+## Projects
+
+### <span>funzip (Clojure library) — Creator / Maintainer</span>
+- Designed and implemented a protocol-based zipper library in Clojure, ported from Scala, to simplify navigation and manipulation of hierarchical data structures
+- Introduced a clean API using Clojure protocols that improved over the standard clojure.zip by enhancing composability, readability, and usability
+- Authored complete documentation and usage examples to help users onboard quickly
+
+### <span> Amble — Full-Stack Clojure Application — Creator / Maintainer</span>
+- Built a functional full-stack Clojure system with a modular architecture: amble-server provides a RESTful API and database layer, while amble-client implements the frontend and API consumer logic
+- Server: Implemented using Ring and SQL migrations, Dockerized deployment, and Makefile automation for local and containerized builds
+- Client: Developed in ClojureScript to interact seamlessly with the server API
+- Automated build and run workflows with deps.edn and shell scripts; containerized the full environment for reproducible deployment
+- Emphasized functional purity, composability, and reproducibility across both components, aligning with idiomatic Clojure design principles
+
 ## Experience
 
 <!-- You have to wrap the "left" and "right" half of these headings in spans by
@@ -45,6 +60,7 @@ hand -->
 - Led the upgrade initiative of several internal and external dependencies such as cats and scala3 for project stability and performance
 - Configured CI/CD pipelines and updated configuration settings across multiple services to align with build scripts and ensure consistent deployment processes
 - Strengthened error handling mechanisms and updated test cases to ensure robustness in services
+- Developed a Clojure-based solution to aggregate disparate user data, enhancing client support operations for a DevOps initiative
 
 ### <span>Software Engineer, Signalpath</span> <span>Feb 2019 -- Nov 2020</span>
 
