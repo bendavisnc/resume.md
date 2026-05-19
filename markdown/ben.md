@@ -4,31 +4,11 @@
 - bendavisnc@gmail.com
 - (252) 578-9587
 - Roanoke Rapids, NC 27870
-- bendavisnc.github.io
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
 
 Experienced software engineer with a strong background in functional programming, specializing in Scala, Ruby, and Clojure. Passionate about building scalable, maintainable, and high-performance applications, with hands-on experience in http4s, Cats, and Reagent. Adept at solving complex problems using purely functional programming techniques. Comfortable working with modern development tools, automated testing, and deployment pipelines. Always eager to explore innovative solutions to tackle real world problems.
-
-## Skills
-
-- Html
-- Css
-- Javascript
-- Aws
-- Java
-- Scala
-- Clojure
-- Ruby
-- Bash
-- Git
-- Docker
-- Make
-- Android 
-- Blender
-- Dia
-- Inkscape
 
 ## Education
 
