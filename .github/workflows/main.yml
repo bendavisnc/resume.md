@@ -17,7 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - run: sudo apt install exiftool
+      - uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: exiftool
 
       - uses: ruby/setup-ruby@v1
         with:
