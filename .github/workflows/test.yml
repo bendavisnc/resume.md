@@ -9,6 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - run: sudo apt install exiftool
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
