@@ -1,4 +1,4 @@
-# resume.md
+# resume.md [![Build Status](https://github.com/bendavisnc/resume.md/actions/workflows/test.yml/badge.svg)](https://github.com/bendavisnc/resume.md/actions/workflows/test.yml)
 
 ![Sample Homage](Dorothy_kilgallen.jpg)
 
