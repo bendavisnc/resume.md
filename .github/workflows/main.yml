@@ -1,9 +1,7 @@
-# GitHub Actions workflow to build and archive a resume
 
-name: build-resume-workflow
+name: Build resume
 
 on:
-  # Trigger workflow on push or pull request events for the 'main_bendavisnc' branch
   push:
     branches: [ main_bendavisnc ]
   pull_request:
@@ -14,37 +12,27 @@ on:
 
 jobs:
   build-resume:
-    name: Build Resume
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
-      - name: Check out repository
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      # Set up Ruby environment
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true  # Cache gems to speed up builds
 
-      # Set up Node.js environment
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '24'
 
-      # Install less compiler
-      - name: Install less compiler
-        run: npm install -g less
+      - run: npm install -g less
 
-      # Build the resume
       - name: Generate Resume
         run: |
           chmod +x personal.sh
           ./personal.sh
 
-      - name: Delete old Resume
+      - name: Delete old resume
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ github.token }}
@@ -53,7 +41,7 @@ jobs:
           fail-if-no-assets: false
           fail-if-no-release: false
 
-      - name: Release new Resume
+      - name: Release new resume
         uses: softprops/action-gh-release@v1
         with:
           files: ./resume.pdf
