@@ -35,6 +35,19 @@ module Resume
       `#{chrome} #{options.join ' '} --print-to-pdf=#{pdf_filename} #{html_filename}`
     end
 
+    def self.git_hash
+      h = `git rev-parse --short HEAD`.strip
+      raise "Unexpected git hash, `#{h}`." unless h.length == 7
+      h
+    end
+
+    def self.assoc_metadata!(pdf_filename, metadata)
+      raise "Please install `exiftool`." unless `which exiftool`.include?('exiftool')
+      metadata.each do |key, value|
+        `exiftool -#{key}="#{value}" #{pdf_filename}`
+      end
+    end
+
     def self.pdf(html)
       lambda { |env|
         Task do
@@ -49,8 +62,9 @@ module Resume
             pdf_filename = File.join(tmp_dir, 'resume_temp.pdf')
             FileUtils.touch(pdf_filename)
             chrome_invoke!(chrome, html_filename, pdf_filename, chrome_cli_options)
+            title = "#{env[:title]} (#{git_hash})"
+            assoc_metadata! pdf_filename, { 'Title' => title }
             pdf_content = File.read(pdf_filename, mode: 'rb')
-            # binding.pry
             raise 'Unexpected pdf content from chrome invocation.' unless [true,
                                                                            'ASCII-8BIT'] == [
                                                                              pdf_content.valid_encoding?, pdf_content.encoding.name
