@@ -24,4 +24,4 @@ jobs:
 
       - run: npm install -g less
 
-      - run: bundle exec rspec
+      - run: bundle exec rspec --format documentation
