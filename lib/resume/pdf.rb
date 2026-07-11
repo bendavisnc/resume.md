@@ -78,7 +78,7 @@ module Resume
 
     def self.main
       env = YAML.load(ARGV[0])
-      raise "Incorrect env configuration." unless [:chrome, :markdown_src, :html_doc_template_src, :title, :less, :less_sources] == env.keys
+      raise "Incorrect env configuration." unless env.keys == [:chrome, :markdown_src, :html_doc_template_src, :title, :less, :less_sources]
       pdf_content = Resume::Css.css.call(env).bind do |css|
         Resume::Html.html(css).call(env).bind { |html| pdf(html).call(env) }
       end.value!
