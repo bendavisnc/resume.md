@@ -14,3 +14,4 @@ RSpec.describe Resume::Css, '#css' do
     expect(css_content).to eq(File.read(File.join(__dir__, 'assets', 'test.css')))
   end
 end
+
